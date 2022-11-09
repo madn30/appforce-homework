@@ -7,6 +7,7 @@ import Filter from 'views/Filter/Filter';
 import { Users } from 'types/users';
 import { usersSelector } from 'selectors/users';
 import { useSelector } from 'react-redux';
+import Loader from 'components/Loader/Loader';
 
 const useStyles = makeStyles(() => ({
 	root: {
@@ -21,10 +22,12 @@ const Dashboard: FC = () => {
 	const classes = useStyles();
 	const users = useSelector(usersSelector);
 
+	if (!users) return <Loader />;
+
 	return (
 		<Box className={classes.root}>
 			<Filter users={users} setFiltered={setFiltered} />
-			<UsersTable filtered={filtered} />
+			{filtered.length && <UsersTable filtered={filtered} />}
 			<AddUser />
 		</Box>
 	);

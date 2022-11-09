@@ -7,7 +7,6 @@ const useStyle = makeStyles(() => ({
 	backDrop: {
 		width: '100%',
 		backgroundColor: 'rgba(255,255,255,.3) !important',
-		// backdropFilter: 'blur(10px)',
 		backdropFilter: 'brightness(184%) saturate(50%) blur(1px) !important',
 		height: '100%',
 		outline: '0px  !important',
