@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable no-mixed-spaces-and-tabs */
+/* eslint-disable no-console */
+import LoadingScreen from 'components/LoadingScreen/LoadingScreen';
+import React, { FC } from 'react';
+import Dashboard from 'views/Dashboard/Dashboard';
+import DataFetcher from './components/DataFetcher/DataFetcher';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: FC = () => {
+
+	const [isLoading, setIsLoading] = React.useState(false);
+
+	return (
+		<>
+			<DataFetcher setIsLoading={setIsLoading} />
+			{isLoading ? <LoadingScreen /> : <Dashboard />}
+		</>
+
+	);
+};
 
 export default App;
