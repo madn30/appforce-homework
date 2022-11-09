@@ -27,7 +27,7 @@ const Dashboard: FC = () => {
 	return (
 		<Box className={classes.root}>
 			<Filter users={users} setFiltered={setFiltered} />
-			{filtered.length && <UsersTable filtered={filtered} />}
+			<UsersTable filtered={filtered} />
 			<AddUser />
 		</Box>
 	);

@@ -43,7 +43,7 @@ const Filter: FC<FilterProps> = ({ users, setFiltered }) => {
 
 			if (email && !user.email.toLocaleLowerCase().includes(email.toLocaleLowerCase())) return false;
 
-			if (id && !user.id.value.toLocaleLowerCase().includes(id.toLocaleLowerCase())) return false;
+			if (id && !user.id?.value?.includes(id)) return false;
 
 			if (name && !dataName.toLocaleLowerCase().includes(name)) return false;
 
